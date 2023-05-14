@@ -1,0 +1,95 @@
+.loginContainer {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  padding-top: 50px;
+}
+.loginInputs{
+  width: 80%;
+}
+
+.loginInputsRest {
+  width: 80%;
+}
+.loginLogo {
+  padding-top: 50px;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 0px 30px 0px;
+  width: 100%;
+}
+.loginBloque {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.loginContainerRest {
+  background-image: url('../../assets/tGrande.png');
+  background-size: 130%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.loginLabel {
+  padding-left: 10px;
+}
+.loginLabelRest {
+  padding-left: 10px;
+  color: blue;
+}
+.loginErrorLink {
+  color: greenyellow;
+}
+.loginLine {
+  border-bottom: 2px solid var(--white);
+  width: 70%;
+}
+
+.loginNew {
+  padding: 10px 0px 10px 0px;
+  color: white;
+}
+
+.loginWhite {
+  color: white;
+}
+.imgFlecha {
+  height: 20px;
+}
+.loginRetroceder {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding-bottom: 200px;
+}
+
+.loginInput {
+  position: relative;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.eye-icon2 {
+  position: absolute;
+  top: 64%;
+  right: 25px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black;
+}
+
+.loginBloque {
+  position: relative;
+}

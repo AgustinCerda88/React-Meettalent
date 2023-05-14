@@ -1,0 +1,41 @@
+
+
+nav {
+    background: var(--light-blue);
+    display: flex;
+    justify-content: flex-start;
+    width: max-content;
+    height: 65px;
+    display: block;
+    padding: 1rem 2.5rem;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2rem;
+    display: flex;
+    gap: 1.5rem;
+    border-radius: 2rem;
+    z-index: 10;
+    
+
+}
+
+nav a {
+    /* background-color: var(--blue); */
+    padding: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    color:  var(--black);
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: (--black);
+
+}
+
+nav a.active {
+    background: var(--light-blue);
+    color: var(--blue);
+
+}

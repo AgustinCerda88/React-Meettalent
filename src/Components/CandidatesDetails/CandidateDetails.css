@@ -1,0 +1,228 @@
+/*------------------------------------TABLET-------------------------------------*/
+
+@media screen and (max-width: 1024px) {}
+
+/*------------------------------------MOBILE-------------------------------------*/
+@media screen and (max-width: 600px) {}
+.container{
+
+    height: 969px;
+    background-color: var(--white);
+    margin-top: 184px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-top-right-radius: 29px;
+    border-top-left-radius: 29px;
+  }
+
+.white{
+    color:var(--white)
+}
+.persons {
+    height: 140px;
+    width: 47%;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 36px;
+}
+.cand-image {
+    height: 206px;
+    width: 205px;
+    border-radius: 130px;
+    object-fit: cover;
+    position: absolute;
+    left: 25%;
+    bottom: 480px;
+}
+
+.heart{
+    display: flex;
+    width: 60px;
+    height: 30px;
+    color: var(--light-green);
+}
+
+.barra_candidato{
+  width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color:var(--white);
+    padding-top: 75px;
+    align-items: center;
+}
+.flexa{
+    margin-right: -1px;
+    width: 51px;
+    height: 26px;
+    display: flex;
+    color:var(--white);
+}
+.contenedor_candidato_letras{
+    padding-top: 95px;
+    display: flex;
+    width: 90%;
+    height: 45px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.nombre_candidato{
+    display: flex;
+    font-size: xx-large;
+    
+}
+.redes_sociales_candidatos{
+    display: flex;
+    padding-top: 20px;
+    
+    
+}
+.twitter_candidatos{
+    width: 59px;
+    height: 39px;
+    color:var(--dark-blue-letter)
+}
+.insta_candidatos{
+    width: 59px;
+    height: 39px;
+    color:var(--dark-blue-letter)
+}
+.face_candidatos{
+    width: 59px;
+    height: 39px;
+    color:var(--dark-blue-letter)
+}
+.datoscand{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 317px;
+    height: 168px;
+    gap: 9px;
+    justify-content: center;
+}
+
+.datospersonales{
+    padding-right: 166px;
+    color: var(--dark-blue-letter);
+    font-size: large;
+    display: flex;
+    padding-top: 32px;
+    justify-content: center;
+    margin-bottom: 26px;
+    font-weight: bold;
+}
+
+
+
+.datospersonales1{
+   color: var(--dark-blue-letter);
+    font-size: large;
+    padding-top: 34px;
+    justify-content: flex-start;
+    font-weight: bold;
+    margin-left: 45px;
+
+}
+
+.iconospersonales{
+    width: 174px;
+    height: 122px;
+    display: flex;
+    flex-direction: column;
+}
+.i1{
+    color:var(--blue);
+    width: 44px;
+    height: 29px;
+}
+.i2{
+    width: 44px;
+    height: 29px;
+    color:var(--blue)
+}
+.i3{
+    width: 44px;
+    height: 29px;
+    color:var(--blue)
+}
+.i4{
+    width: 44px;
+    height: 29px;
+    color:var(--blue)
+}
+
+.partefinal{
+    height: 50px;
+    width: 416px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 37px;
+}
+
+.informacion{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.botonestin{
+    display: flex;
+    width: 101px;
+    height: 43px;
+    border: 2px solid var(--blue);
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.education{
+    width: 21px;
+    height: 21px;
+}
+
+.partefinal{
+    height: 50px;
+    width: 416px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 37px;
+}
+
+.informacion{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.botonestin1{
+    text-align: center;
+    color: var(--dark-blue-letter);
+    display: flex;
+    width: 337px;
+    height: 80px;
+    border: 2px solid var(--blue);
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    padding: 12px;
+    margin-bottom: 21px;
+}
+
+.datospersonales2{
+    color: var(--dark-blue-letter);
+    font-size: large;
+    padding-top: 84px;
+    justify-content: flex-start;
+    font-weight: bold;
+
+    margin-left: -220px;}

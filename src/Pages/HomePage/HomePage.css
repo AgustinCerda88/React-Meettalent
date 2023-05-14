@@ -1,0 +1,70 @@
+
+/*------------------------------------TABLET-------------------------------------*/
+@media screen and (max-width: 1024px) {
+
+}
+.homecontainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+
+}
+
+.homehead{
+    display: flex;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hometitle{
+    height: 60px;
+}
+
+.homeimg{
+    height: 45px;
+    width: 45px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.homenav{
+    min-width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buscadorhome{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    font-family: var(--font-family);
+    width: 65%;
+    height: 38px;
+    border-radius: 6px;
+    background-color: var(--light-blue);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    color: var(--blue-letter);
+
+}
+
+.chat{
+    height: 30px;
+    width: 30px;
+    color: var(--blue-letter)
+}
+
+
+/*------------------------------------MOBILE-------------------------------------*/
+@media screen and (min-width: 500px){
+ 
+  
+}

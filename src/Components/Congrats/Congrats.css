@@ -1,0 +1,49 @@
+@media screen and (max-width: 1024px) {
+  .div {
+    width: 199px;
+    height: 200px;
+  }
+}
+
+/*------------------------------------MOBILE-------------------------------------*/
+
+.congratsContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.congratsImg {
+  max-width: 100%;
+}
+.img-congrats {
+  width: 50%;
+  min-width: 200px;
+  margin: auto;
+  display: block;
+}
+
+.congratsText {
+  font-family: var(--font-family);
+  color: var(--white);
+}
+.congratsText1 {
+  font-size: 30pt;
+  min-width: 200px;
+  margin: 25px;
+}
+.congratsText2 {
+  font-size: 18pt;
+  min-width: 200px;
+  margin: 50px;
+}
+
+@media screen and (min-width: 600px) {
+  .congratsText1 {
+    font-size: 3rem;
+  }
+}
