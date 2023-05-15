@@ -10,10 +10,30 @@
     font-size: 15px;
     font-family: var(--font-family);
     width: 100px;
-    height:20px;
+    height: 20px;
     border-radius: 11px;
     border: 1px solid blue;
     color: blue;
     cursor: pointer;
     background-color: transparent;
-  }
+}
+
+.googlecontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+iframe {
+    width: 300px;
+    height: 40px;
+}
+
+.S9gUrf-YoZ4jf .L5Fo6c-sM5MNb .L5Fo6c-bF1uUb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -26,26 +26,32 @@ function Welcome() {
   const pages = [
     isLoading ? (
       <div className="welcome__container welcome__container--black">
-        <img className="img-welcome" src={group7} alt="logo" />
+        <img src={group7} alt="logo" />
       </div>
     ) : (
       <div className="welcome__container welcome__container--black">
         <div className="welcome_container-sub">
-          <Link to={"/login"} className="welcome__text">
+          <Link to={"/login"} className="saltar">
             saltar
           </Link>
-          <img className="img-welcome img-welcome-logo" src={logoT} alt="" />
-          <p className="welcome__text--1 welcome__text--bold">
-            Nos encanta verte por
-          </p>
-          <img
-            className="img-welcome img-welcome-texto"
-            src={whitelogo}
-            alt=""
-          />
-          <p className="welcome__text">
-            Atrae y enamora a los mejores candidatos
-          </p>
+          <div className="imghead">
+            <div className="imglogo">
+              <img className="imglogo-pic" src={logoT} alt="" />
+            </div>
+            <div className="welcome__text--1 welcome__text--bold">
+              Nos encanta verte por
+            </div>
+          </div>
+          <div className="imghead">
+            <img
+              className="img-welcome img-welcome-texto"
+              src={whitelogo}
+              alt=""
+            />
+            <div className="welcome__text--1">
+              Atrae y enamora a los mejores candidatos
+            </div>
+          </div>
           <div className="slider__circles">
             <span className="slider__circle slider__circle-active"></span>
             <span className="slider__circle"></span>
@@ -61,14 +67,18 @@ function Welcome() {
 
     <div className="welcome__container">
       <div className="welcome_container-sub">
-        <Link to={"/login"} className="welcome__text--1">
+        <Link to={"/login"} className="saltar">
           saltar
         </Link>
-        <img className="img-welcome" src={welcom1} alt="" />
-        <p className="welcome__text--1">
-          Meettalent es una herramienta que te ayuda a conectar con el mejor
-          talento
-        </p>
+        <div className="imghead">
+          <img className="img-welcome" src={welcom1} alt="" />
+        </div>
+        <div className="imghead">
+          <div className="welcome__text--1">
+            Meettalent es una herramienta que te ayuda a conectar con el mejor
+            talento
+          </div>
+        </div>
         <div className="slider__circles">
           <span className="slider__circle"></span>
           <span className="slider__circle slider__circle-active"></span>
@@ -83,14 +93,18 @@ function Welcome() {
 
     <div className="welcome__container">
       <div className="welcome_container-sub">
-        <Link to={"/login"} className="welcome__text--1">
+        <Link to={"/login"} className="saltar">
           saltar
         </Link>
-        <img className="img-welcome2" src={welcom2} alt="" />
-        <p className="welcome__text--1 welcome__text1__2">
-          Crear eventos únicos para interactuar con los candidatos desde
-          cualquier lugar
-        </p>
+        <div className="imghead">
+          <img className="img-welcome2" src={welcom2} alt="" />
+        </div>
+        <div className="imghead">
+          <div className="welcome__text--1">
+            Crear eventos únicos para interactuar con los candidatos desde
+            cualquier lugar
+          </div>
+        </div>
         <div className="slider__circles">
           <span className="slider__circle"></span>
           <span className="slider__circle"></span>
@@ -105,11 +119,16 @@ function Welcome() {
 
     <div className="welcome__container ">
       <div className="welcome_container-sub">
-        <img className="img-welcome" src={welcom3} alt="" />
-        <p className="welcome__text--1">
-          Agilizar tus procesos de selección de una manera sencilla, potente y
-          rápida
-        </p>
+        <div className="saltar"></div>
+        <div className="imghead">
+          <img className="img-welcome" src={welcom3} alt="" />
+        </div>
+        <div className="imghead">
+          <div className="welcome__text--1">
+            Agilizar tus procesos de selección de una manera sencilla, potente y
+            rápida
+          </div>
+        </div>
         <div className="slider__circles">
           <span className="slider__circle"></span>
           <span className="slider__circle"></span>

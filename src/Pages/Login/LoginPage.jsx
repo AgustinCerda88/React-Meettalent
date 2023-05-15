@@ -117,7 +117,9 @@ const LoginPage = () => {
           <h3>Crear nueva cuenta</h3>
         </Link>
       </div>
-      <GoogleAuth />
+      <div className="googlebutton">
+        <GoogleAuth />
+      </div>
     </div>
   );
 };

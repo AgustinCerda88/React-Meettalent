@@ -7,14 +7,13 @@ import { API } from "../../shared/services/api";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../shared/components/AuthProvider/AuthProvider";
-import { JwtContext } from "../../shared/contexts/JwtContext";
 
 const RestablecerContrasenaContrasena = () => {
   const { register, handleSubmit } = useForm();
   const { isAuthenticated } = useContext(AuthContext);
   const { userId, resetString } = useParams();
   const navigate = useNavigate();
-  const { setJwt } = useContext(JwtContext);
+
 
   useEffect(() => {
     console.log("isAuthenticated = " + isAuthenticated);

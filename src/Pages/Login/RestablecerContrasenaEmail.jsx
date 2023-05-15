@@ -6,13 +6,11 @@ import flechaRetroceder from "../../assets/flechaRetroceder.png";
 import { API } from '../../shared/services/api';
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../../shared/components/AuthProvider/AuthProvider';
-import { JwtContext } from '../../shared/contexts/JwtContext';
 
 const RestablecerContrasenaEmail = () => {
 
   const { isAuthenticated } = useContext(AuthContext);
   const { register, handleSubmit } = useForm();
-  const { setJwt } = useContext(JwtContext);
   const navigate = useNavigate();
 
   useEffect(() => {

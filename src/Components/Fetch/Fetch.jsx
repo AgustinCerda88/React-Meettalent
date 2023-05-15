@@ -12,7 +12,6 @@ export const Fetch = ({ abierto }) => {
   const [offers, setOffers] = useState([]);
   const { searchText } = useContext(SearchContext);
   const location = useLocation();
-  const [lock, setLock] = useState();
   const [percents, setPercents] = useState([]);
 
   useEffect(() => {
@@ -22,9 +21,10 @@ export const Fetch = ({ abierto }) => {
         const offersData = res.data.map((offer) => {
           return offer;
         });
-
         setOffers(offersData);
-        setPercents(offersData.map(() => Math.round(Math.random() * 100)));
+        setPercents(
+          offersData.map((offer, index) => Math.floor(Math.random() * 100))
+        );
       })
       .catch((error) => {
         console.error(error);
@@ -33,14 +33,33 @@ export const Fetch = ({ abierto }) => {
 
   console.log(offers);
 
-  const toggleAbierto = (offerId) => {
+  const handleUpdateLock = async (offerId, lockStatus) => {
+    try {
+      const response = await axios.put(
+        `http://localhost:8000/offers/${offerId}`,
+        {
+          lock: lockStatus,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const toggleAbierto = async (offerId) => {
     const updatedOffers = [...offers];
     const updatedOffer = updatedOffers.find((offer) => offer._id === offerId);
     updatedOffer.lock = !updatedOffer.lock;
-    setOffers(updatedOffers);
+
+    const updateOfferData = await handleUpdateLock (offerId, updatedOffer.lock)
+
+    if (updateOfferData){
+      setOffers(updatedOffers);
+    }
   };
 
-  const percent = Math.round(Math.random() * 100);
+
 
   return (
     <div className="offerdisplay">
@@ -56,7 +75,8 @@ export const Fetch = ({ abierto }) => {
             offer.lock &&
             offer
         )
-        .map((offer) => {
+        .map((offer, index) => {
+          const percent = percents[index];
           return (
             <div className="lockposition" key={offer._id}>
               <div
@@ -133,7 +153,8 @@ export const Fetch = ({ abierto }) => {
         location.pathname === "/offers" &&
         offers
           .filter((offer) => offer.lock === abierto && offer)
-          .map((offer) => {
+          .map((offer, index) => {
+            const percent = percents[index];
             return (
               <div className="lockposition" key={offer._id}>
                 <div
@@ -162,42 +183,12 @@ export const Fetch = ({ abierto }) => {
                   <div className="process">
                     <div className="processperc">
                       <div>Proceso</div>
-                      <div className="percent">{percents}%</div>
+                      <div className="percent">{percent}%</div>
                     </div>
                     <div className="progress-bar">
                       <div
                         className="progress"
-                        style={{ width: `${percents}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </Link>
-                <Link className="job-offer-detail" to={`/offers/${offer._id}`}>
-                  <div className="fechacreacion">17/04</div>
-                  <h3>{offer.position}</h3>
-                  <div className="city">
-                    <div>
-                      <BiMap /> {offer.location}
-                    </div>
-                    <div>
-                      1 <AiOutlineUser className="logouser" />
-                    </div>
-                    <div>
-                      <AiOutlineEye />
-                      <span> </span>
-                      02/02/2023
-                    </div>
-                  </div>
-                  <div className="line"></div>
-                  <div className="process">
-                    <div className="processperc">
-                      <div>Proceso</div>
-                      <div className="percent">{percents}%</div>
-                    </div>
-                    <div className="progress-bar">
-                      <div
-                        className="progress"
-                        style={{ width: `${percents}%` }}
+                        style={{ width: `${percent}%` }}
                       ></div>
                     </div>
                   </div>

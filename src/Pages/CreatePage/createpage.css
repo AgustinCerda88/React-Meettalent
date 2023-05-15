@@ -1,3 +1,7 @@
+.allpage {
+    height: 100vh;
+}
+
 .createContainer {
     height: 100vh;
     width: 100%;
@@ -6,6 +10,7 @@
     justify-content: center;
     padding-top: 30px;
 }
+
 .createtitle {
     height: 50px;
     position: absolute;
@@ -13,19 +18,22 @@
     top: 70px;
     opacity: 20%;
 }
+
 .container-buttons {
     height: 90%;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
+
 .createlink {
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
 .crear {
     width: 100%;
     display: flex;
@@ -34,18 +42,21 @@
     gap: 30px;
     margin: 40px auto;
 }
+
 .buttoncrear {
     height: 30px;
     width: 200px;
     border-radius: 10px;
     background-color: white;
 }
+
 .circle {
     height: 100px;
     width: 100px;
     border-radius: 50px;
     background-color: var(--light-blue);
 }
+
 .logo {
     justify-self: center;
     align-self: center;
@@ -54,6 +65,7 @@
     margin-left: 30px;
     color: var(--black)
 }
+
 .line {
     width: 80%;
     border-top: solid;
@@ -63,13 +75,11 @@
     border-bottom: none;
     border-width: 1px;
 }
+
 .imgVector {
     height: 20px;
 }
-.pepe {
-    height: 600px;
-    overflow-y: scroll;
-}
+
 .createHeader {
     display: flex;
     flex-direction: row;
@@ -78,38 +88,84 @@
     padding: 30px;
 }
 
-.createForm {
+
+.form-page {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+}
+
+.container-white {
+    position: fixed;
+    display: block;
     width: 100%;
-    gap: 50px;
-    padding-top: 50px;
+    height: 84vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    bottom: 0;
 }
 
-.createImputs {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.block {
     width: 90%;
-    padding-top: 100px;
-}
-
-.offerImputs {
+    height: 90%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
-.offer2 {
+.separador{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputext{
+    width: 100%;
+    height: 120px;
+}
+
+.select{
+    font-size: 12px;
+    font-family: var(--font-family);
     width: 90%;
+    height: 20px;
+    border-radius: 11px;
+    background-color:#d8eef7;
+    color: var(--blue-letter);
+}
+
+.createInputs {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-around;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+}
+
+.titulos-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 120px;
+    align-items: center;
 }
 
 .offerArea {
     width: 100%;
     height: 100px;
-    border: 1px solid grey;
+    border: 1px solid;
+    text-align: center;
+    border-radius:  11px;
+    padding-top: 5px;
 }

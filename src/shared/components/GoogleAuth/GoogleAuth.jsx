@@ -17,7 +17,6 @@ const GoogleAuth = () => {
         localStorage.setItem("token", response.credential);
         localStorage.setItem("name", JSON.stringify(userObject.name));
         localStorage.setItem("email_verified", JSON.stringify(userObject.email_verified));
-
         setJwt(response.credential);
         setIsAuthenticated(true);
         navigate('/home');
@@ -30,8 +29,12 @@ const GoogleAuth = () => {
             callback: handleCallbackResponse,
         });
         google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-            theme: "outline",
+            theme: "filled",
             size: "large",
+            borderRadius: "10",
+            width: "100%",
+            height: "100px",
+
         });
     }
 
@@ -53,7 +56,7 @@ const GoogleAuth = () => {
         }
     }, [jwt]);
 
-    return <div id="signInDiv" className='loginGoogle'></div>;
+    return <div id="signInDiv" className="googlecontainer" ></div>;
 };
 
 export default GoogleAuth;

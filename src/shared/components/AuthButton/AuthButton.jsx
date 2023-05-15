@@ -34,5 +34,5 @@ export default function AuthButton() {
 
 
 
-return jwt ? (<p> Welcome! {user} <button onClick={signOut}>Sign out</button></p>) : (<p>You are not logged in.</p>);
+return jwt ? (<div className="userInfo"><p> Welcome! {user} <button onClick={signOut}>Sign out</button></p></div>) : (<p className="userInfo">You are not logged in</p>);
 }

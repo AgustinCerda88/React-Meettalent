@@ -53,10 +53,10 @@
 .city {
     display: flex;
     flex-direction: row;
-    gap: 20px;
     align-items: center;
     font-size: 12px;
     width: 100%;
+    justify-content: space-between;
 
 }
 
