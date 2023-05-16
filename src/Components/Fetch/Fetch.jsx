@@ -96,10 +96,10 @@ export const Fetch = ({ abierto }) => {
                       1 <AiOutlineUser className="logouser" />
                     </div>
                     <div>
-                      <AiOutlineEye />
-                      <span> </span>
+                      {/* <span> </span> */}
                       {offer.date && (
                         <div className="fechacreacion">
+                          <AiOutlineEye />
                           {`${offer.date.day}/${offer.date.month}/${offer.date.year}`}
                         </div>
                       )}
@@ -178,11 +178,11 @@ export const Fetch = ({ abierto }) => {
                       1 <AiOutlineUser className="logouser" />
                     </div>
                     <div>
-                      <AiOutlineEye />
-                      <span> </span>
+                      {/* <span> </span> */}
                       <div className="fechacreacion">
                         {offer.date && (
                           <div className="fechacreacion">
+                            <AiOutlineEye />
                             {`${offer.date.day}/${offer.date.month}/${offer.date.year}`}
                           </div>
                         )}

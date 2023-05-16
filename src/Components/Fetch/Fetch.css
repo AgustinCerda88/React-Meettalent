@@ -48,7 +48,15 @@
     color: var(--grey-normal);
     display: flex;
     align-self: baseline;
+    gap: 6px;
 }
+.fechacreacion svg {
+    height: 20px;
+    width: 27px;
+    
+}
+
+
 
 .city {
     display: flex;
