@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom"; // Importar useHistory
+import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../App";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
@@ -19,6 +19,12 @@ export const CreateOffer = () => {
   };
 
   const onSubmit = (data) => {
+    const currentDate = new Date();
+  data.date = {
+    month: currentDate.getMonth() + 1,
+    year: currentDate.getFullYear()
+  };
+    console.log(Date);
     data.lock = true;
     const updatedData = { ...data };
     handleCreateOffer(updatedData);

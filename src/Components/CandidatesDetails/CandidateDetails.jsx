@@ -76,7 +76,6 @@ export const CandidateDetails = () => {
                 <FaFacebookF className="face_candidatos"></FaFacebookF>
               </div>
             </div>
-
             <p className="datospersonales">Datos personales</p>
             <div className="datoscand">
               <div className="iconospersonales"></div>

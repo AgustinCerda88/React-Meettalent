@@ -63,7 +63,7 @@ export const Fetch = ({ abierto }) => {
 
   return (
     <div className="offerdisplay">
-      {offers
+      {offers.length === 0 ? (<div>NO HAY OFERTAS DISPONIBLES</div>) : offers
         .filter(
           (offer) =>
             (offer.position.toLowerCase().includes(searchText) ||
@@ -86,7 +86,9 @@ export const Fetch = ({ abierto }) => {
                 {offer.lock === true ? <BiLockOpenAlt /> : <BiLockAlt />}
               </div>
               <Link className="job-offer-detail" to={`/offers/${offer._id}`}>
-                <div className="fechacreacion">17/04</div>
+                <div className="fechacreacion">
+                {/* {offer.date.month/offer.date.year} */}
+                </div>
                 <h3>{offer.position}</h3>
                 <div className="city">
                   <div>
@@ -164,7 +166,9 @@ export const Fetch = ({ abierto }) => {
                   {offer.lock === true ? <BiLockOpenAlt /> : <BiLockAlt />}
                 </div>
                 <Link className="job-offer-detail" to={`/offers/${offer._id}`}>
-                  <div className="fechacreacion">17/04</div>
+                  <div className="fechacreacion">
+                  {/* {offer.date.month/offer.date.year} */}
+                  </div>
                   <h3>{offer.position}</h3>
                   <div className="city">
                     <div>

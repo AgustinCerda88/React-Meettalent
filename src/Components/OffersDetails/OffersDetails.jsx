@@ -6,17 +6,17 @@ import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import "./OffersDetails.css";
 import { SearchContext } from "../../App";
+import { useNavigate } from "react-router-dom"; 
 
 export const OffersDetails = () => {
   // const newOffer = useContext(SearchContext);
-  const { newOffer } = useContext(SearchContext);
+  const { newOffer, setNewOffer } = useContext(SearchContext);
   const [offer, setOffer] = useState(null);
   const { id } = useParams();
-  // const lastOffer = newOffer.find((lastOffer) => lastOffer.id === id);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (newOffer && newOffer._id === id) {
-      // Si la última oferta creada tiene la misma ID que la actual, la usamos
       setOffer(newOffer);
     } else {
       axios
@@ -29,6 +29,20 @@ export const OffersDetails = () => {
         });
     }
   }, [id, newOffer]);
+
+  const deleteOffer = async (id) => {
+    try {
+      
+      await axios.delete(`http://localhost:8000/offers/${id}`);
+      setNewOffer(null);
+      console.log("Oferta eliminada con exito");
+      navigate("/home");
+    } catch (error) {
+      alert("No se ha encontrado la oferta a eliminar. Tal vez ya haya sido eliminada.")
+      console.error(error);
+    }
+  };
+
 
   return (
     <div className="page">
@@ -103,9 +117,12 @@ export const OffersDetails = () => {
                 </p>
                 <p> {offer.availability}</p>
               </div>
+              <button style={{height: "20px", width: "100px", backgroundcolor:"red"}} 
+              onClick={() => deleteOffer(offer._id)}
+              >Eliminar oferta</button>
             </div>
           ) : (
-            <p>Cargando...</p>
+            <p>Cargando las ofertas...</p>
           )}
         </div>
       </div>

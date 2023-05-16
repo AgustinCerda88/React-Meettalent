@@ -48,7 +48,7 @@ function Welcome() {
               src={whitelogo}
               alt=""
             />
-            <div className="welcome__text--1">
+            <div className="welcome__text--white">
               Atrae y enamora a los mejores candidatos
             </div>
           </div>

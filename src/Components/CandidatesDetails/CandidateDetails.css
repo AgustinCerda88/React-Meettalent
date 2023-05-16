@@ -4,7 +4,8 @@
 
 /*------------------------------------MOBILE-------------------------------------*/
 @media screen and (max-width: 600px) {}
-.container{
+
+.container {
 
     height: 969px;
     background-color: var(--white);
@@ -15,11 +16,15 @@
     flex-direction: column;
     border-top-right-radius: 29px;
     border-top-left-radius: 29px;
-  }
-
-.white{
-    color:var(--white)
 }
+
+.keywords{
+    width: 100%;
+}
+.white {
+    color: var(--white)
+}
+
 .persons {
     height: 140px;
     width: 47%;
@@ -27,6 +32,7 @@
     background-color: white;
     margin-top: 36px;
 }
+
 .cand-image {
     height: 206px;
     width: 205px;
@@ -37,29 +43,31 @@
     bottom: 480px;
 }
 
-.heart{
+.heart {
     display: flex;
     width: 60px;
     height: 30px;
     color: var(--light-green);
 }
 
-.barra_candidato{
-  width: 100%;
+.barra_candidato {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    color:var(--white);
+    color: var(--white);
     padding-top: 75px;
     align-items: center;
 }
-.flexa{
+
+.flexa {
     margin-right: -1px;
     width: 51px;
     height: 26px;
     display: flex;
-    color:var(--white);
+    color: var(--white);
 }
-.contenedor_candidato_letras{
+
+.contenedor_candidato_letras {
     padding-top: 95px;
     display: flex;
     width: 90%;
@@ -68,33 +76,39 @@
     align-items: center;
     gap: 12px;
 }
-.nombre_candidato{
+
+.nombre_candidato {
     display: flex;
     font-size: xx-large;
-    
+
 }
-.redes_sociales_candidatos{
+
+.redes_sociales_candidatos {
     display: flex;
     padding-top: 20px;
-    
-    
+
+
 }
-.twitter_candidatos{
+
+.twitter_candidatos {
     width: 59px;
     height: 39px;
-    color:var(--dark-blue-letter)
+    color: var(--dark-blue-letter)
 }
-.insta_candidatos{
+
+.insta_candidatos {
     width: 59px;
     height: 39px;
-    color:var(--dark-blue-letter)
+    color: var(--dark-blue-letter)
 }
-.face_candidatos{
+
+.face_candidatos {
     width: 59px;
     height: 39px;
-    color:var(--dark-blue-letter)
+    color: var(--dark-blue-letter)
 }
-.datoscand{
+
+.datoscand {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -104,7 +118,7 @@
     justify-content: center;
 }
 
-.datospersonales{
+.datospersonales {
     padding-right: 166px;
     color: var(--dark-blue-letter);
     font-size: large;
@@ -115,46 +129,48 @@
     font-weight: bold;
 }
 
-
-
-.datospersonales1{
-   color: var(--dark-blue-letter);
+.datospersonales1 {
+    color: var(--dark-blue-letter);
     font-size: large;
     padding-top: 34px;
     justify-content: flex-start;
     font-weight: bold;
-    margin-left: 45px;
+    padding-left: 45px;
 
 }
 
-.iconospersonales{
+.iconospersonales {
     width: 174px;
     height: 122px;
     display: flex;
     flex-direction: column;
 }
-.i1{
-    color:var(--blue);
+
+.i1 {
+    color: var(--blue);
     width: 44px;
     height: 29px;
-}
-.i2{
-    width: 44px;
-    height: 29px;
-    color:var(--blue)
-}
-.i3{
-    width: 44px;
-    height: 29px;
-    color:var(--blue)
-}
-.i4{
-    width: 44px;
-    height: 29px;
-    color:var(--blue)
 }
 
-.partefinal{
+.i2 {
+    width: 44px;
+    height: 29px;
+    color: var(--blue)
+}
+
+.i3 {
+    width: 44px;
+    height: 29px;
+    color: var(--blue)
+}
+
+.i4 {
+    width: 44px;
+    height: 29px;
+    color: var(--blue)
+}
+
+.partefinal {
     height: 50px;
     width: 416px;
     display: flex;
@@ -164,13 +180,13 @@
     padding-top: 37px;
 }
 
-.informacion{
+.informacion {
     width: 100%;
     height: 200px;
     overflow-y: scroll;
 }
 
-.botonestin{
+.botonestin {
     display: flex;
     width: 101px;
     height: 43px;
@@ -180,12 +196,12 @@
     justify-content: center;
 }
 
-.education{
+.education {
     width: 21px;
     height: 21px;
 }
 
-.partefinal{
+.partefinal {
     height: 50px;
     width: 416px;
     display: flex;
@@ -195,13 +211,13 @@
     padding-top: 37px;
 }
 
-.informacion{
+.informacion {
     width: 100%;
     height: 200px;
     overflow-y: scroll;
 }
 
-.botonestin1{
+.botonestin1 {
     text-align: center;
     color: var(--dark-blue-letter);
     display: flex;
@@ -218,11 +234,11 @@
     margin-bottom: 21px;
 }
 
-.datospersonales2{
+.datospersonales2 {
     color: var(--dark-blue-letter);
     font-size: large;
     padding-top: 84px;
     justify-content: flex-start;
     font-weight: bold;
-
-    margin-left: -220px;}
+    margin-left: -220px;
+}

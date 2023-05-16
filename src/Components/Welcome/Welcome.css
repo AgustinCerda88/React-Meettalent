@@ -85,6 +85,12 @@
   font-size: 18pt;
 }
 
+.welcome__text--white {
+  font-family: var(--font-family);
+  color: var(--white);
+  text-align: center;
+  font-size: 18pt;
+}
 
 .welcome__text--bold {
   font-weight: 700;
