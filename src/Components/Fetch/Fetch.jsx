@@ -52,97 +52,100 @@ export const Fetch = ({ abierto }) => {
     const updatedOffer = updatedOffers.find((offer) => offer._id === offerId);
     updatedOffer.lock = !updatedOffer.lock;
 
-    const updateOfferData = await handleUpdateLock (offerId, updatedOffer.lock)
+    const updateOfferData = await handleUpdateLock(offerId, updatedOffer.lock);
 
-    if (updateOfferData){
+    if (updateOfferData) {
       setOffers(updatedOffers);
     }
   };
 
-
-
   return (
     <div className="offerdisplay">
-      {offers.length === 0 ? (<div>NO HAY OFERTAS DISPONIBLES</div>) : offers
-        .filter(
-          (offer) =>
-            (offer.position.toLowerCase().includes(searchText) ||
-              offer.company.toLowerCase().includes(searchText) ||
-              offer.description.toLowerCase().includes(searchText) ||
-              offer.location.toLowerCase().includes(searchText) ||
-              offer.city.toLowerCase().includes(searchText)) &&
-            location.pathname === "/home" &&
-            offer.lock &&
-            offer
-        )
-        .map((offer, index) => {
-          const percent = percents[index];
-          return (
-            <div className="lockposition" key={offer._id}>
-              <div
-                className="locklogo"
-                onClick={() => toggleAbierto(offer._id)}
-              >
-                {offer.lock === true ? <BiLockOpenAlt /> : <BiLockAlt />}
+      {offers.length === 0 ? (
+        <div>NO HAY OFERTAS DISPONIBLES</div>
+      ) : (
+        offers
+          .filter(
+            (offer) =>
+              (offer.position.toLowerCase().includes(searchText) ||
+                offer.company.toLowerCase().includes(searchText) ||
+                offer.description.toLowerCase().includes(searchText) ||
+                offer.location.toLowerCase().includes(searchText) ||
+                offer.city.toLowerCase().includes(searchText)) &&
+              location.pathname === "/home" &&
+              offer.lock &&
+              offer
+          )
+          .map((offer, index) => {
+            const percent = percents[index];
+            return (
+              <div className="lockposition" key={offer._id}>
+                <div
+                  className="locklogo"
+                  onClick={() => toggleAbierto(offer._id)}
+                >
+                  {offer.lock === true ? <BiLockOpenAlt /> : <BiLockAlt />}
+                </div>
+                <Link className="job-offer-detail" to={`/offers/${offer._id}`}>
+                  <h3>{offer.position}</h3>
+                  <div className="city">
+                    <div>
+                      <BiMap /> {offer.location}
+                    </div>
+                    <div>
+                      1 <AiOutlineUser className="logouser" />
+                    </div>
+                    <div>
+                      <AiOutlineEye />
+                      <span> </span>
+                      {offer.date && (
+                        <div className="fechacreacion">
+                          {`${offer.date.day}/${offer.date.month}/${offer.date.year}`}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className="line"></div>
+                  <div className="process">
+                    <div className="processperc">
+                      <div>Proceso</div>
+                      <div className="percent">{percent}%</div>
+                    </div>
+                    <div className="progress-bar">
+                      <div
+                        className="progress"
+                        style={{ width: `${percent}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="footeroffer">
+                    <div>
+                      <div className="number">
+                        {Math.floor(Math.random() * 50)}
+                      </div>
+                      <div>Inscritos</div>
+                    </div>
+                    <div className="linevert"></div>
+                    <div>
+                      <div className="number">
+                        {Math.floor(Math.random() * 50)}
+                      </div>
+                      <div>Procesos</div>
+                    </div>
+                    <div className="linevert"></div>
+                    <div>
+                      <div className="number">
+                        {Math.floor(Math.random() * 50)}
+                      </div>
+                      <div>Finalistas</div>
+                    </div>
+                  </div>
+                  <div></div>
+                </Link>
               </div>
-              <Link className="job-offer-detail" to={`/offers/${offer._id}`}>
-                <div className="fechacreacion">
-                {/* {offer.date.month/offer.date.year} */}
-                </div>
-                <h3>{offer.position}</h3>
-                <div className="city">
-                  <div>
-                    <BiMap /> {offer.location}
-                  </div>
-                  <div>
-                    1 <AiOutlineUser className="logouser" />
-                  </div>
-                  <div>
-                    <AiOutlineEye />
-                    <span> </span>
-                    02/02/2023
-                  </div>
-                </div>
-                <div className="line"></div>
-                <div className="process">
-                  <div className="processperc">
-                    <div>Proceso</div>
-                    <div className="percent">{percent}%</div>
-                  </div>
-                  <div className="progress-bar">
-                    <div
-                      className="progress"
-                      style={{ width: `${percent}%` }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="footeroffer">
-                  <div>
-                    <div className="number">
-                      {Math.floor(Math.random() * 50)}
-                    </div>
-                    <div>Inscritos</div>
-                  </div>
-                  <div className="linevert"></div>
-                  <div>
-                    <div className="number">
-                      {Math.floor(Math.random() * 50)}
-                    </div>
-                    <div>Procesos</div>
-                  </div>
-                  <div className="linevert"></div>
-                  <div>
-                    <div className="number">
-                      {Math.floor(Math.random() * 50)}
-                    </div>
-                    <div>Finalistas</div>
-                  </div>
-                </div>
-                <div></div>
-              </Link>
-            </div>
-          );
-        })}
+            );
+          })
+      )}
 
       {offers.filter(
         (offer) =>
@@ -166,9 +169,6 @@ export const Fetch = ({ abierto }) => {
                   {offer.lock === true ? <BiLockOpenAlt /> : <BiLockAlt />}
                 </div>
                 <Link className="job-offer-detail" to={`/offers/${offer._id}`}>
-                  <div className="fechacreacion">
-                  {/* {offer.date.month/offer.date.year} */}
-                  </div>
                   <h3>{offer.position}</h3>
                   <div className="city">
                     <div>
@@ -180,7 +180,13 @@ export const Fetch = ({ abierto }) => {
                     <div>
                       <AiOutlineEye />
                       <span> </span>
-                      02/02/2023
+                      <div className="fechacreacion">
+                        {offer.date && (
+                          <div className="fechacreacion">
+                            {`${offer.date.day}/${offer.date.month}/${offer.date.year}`}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                   <div className="line"></div>

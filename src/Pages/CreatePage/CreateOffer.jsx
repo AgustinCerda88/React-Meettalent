@@ -20,16 +20,18 @@ export const CreateOffer = () => {
 
   const onSubmit = (data) => {
     const currentDate = new Date();
-  data.date = {
-    month: currentDate.getMonth() + 1,
-    year: currentDate.getFullYear()
-  };
+    data.date = {
+      day: currentDate.getDate(),
+      month: currentDate.getMonth() + 1,
+      year: currentDate.getFullYear(),
+    };
     console.log(Date);
     data.lock = true;
     const updatedData = { ...data };
     handleCreateOffer(updatedData);
     console.log(updatedData);
   };
+  
 
   const handleCreateOffer = (data) => {
     const requestOptions = {
@@ -251,12 +253,8 @@ export const CreateOffer = () => {
                       <option value="Tiempo parcial">
                         Contrato por tiempo parcial
                       </option>
-                      <option value="Formación">
-                        Contrato de formación
-                      </option>
-                      <option value="Prácticas">
-                        Contrato en prácticas
-                      </option>
+                      <option value="Formación">Contrato de formación</option>
+                      <option value="Prácticas">Contrato en prácticas</option>
                     </select>
                   </div>
                 </div>
