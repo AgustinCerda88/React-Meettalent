@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import { BiChat } from "react-icons/bi";
 import Nav from "../../Components/Nav/Nav";
@@ -13,7 +13,11 @@ import AuthButton from "../../shared/components/AuthButton/AuthButton";
 
 const HomePage = () => {
   const [abierto, setAbierto] = useState({});
+  const [cantidadOfertasLock, setCantidadOfertasLock] = useState(0);
 
+  useEffect(() => {
+
+  }, []);
 
   return (
     <div className="homecontainer">
@@ -37,12 +41,12 @@ const HomePage = () => {
       <div className="offers">
         <h2>Ofertas abiertas
         (
-          {/* {cantidadOfertas} */}
+          {cantidadOfertasLock}
           )
         </h2>
         <div className="homeoffers">
           <AbiertoContext.Provider value={{ abierto, setAbierto }}>
-            <Fetch></Fetch>
+            <Fetch setCantidadOfertasLock={setCantidadOfertasLock}></Fetch>
           </AbiertoContext.Provider>
         </div>
         <Nav></Nav>

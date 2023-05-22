@@ -1,17 +1,55 @@
-.job-offer{
-    min-height: 550px;
-    max-height: 400px;
+.offerdetail {
     width: 80%;
+    height: 85%;
+    margin: 20px auto;
+    border-radius: 15px;
+    color: var(--blue-letter);
+    overflow-y: scroll;
+}
+
+
+.job-offer {
+    width: 100%;
+    height: 850px;
     background-color: white;
-    border-radius: 6px;
+    border-radius: 15px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
+    justify-content: space-around;
+    padding: 50px auto;
 
 }
 
+.job-title {
+    width: 90%;
+    text-align: center;
+    color: var(--black);
+}
+
+.description {
+    width: 90%;
+}
+
+.editor {
+    width: 270px;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button{
+    width: 120px;
+    border-radius: 15px;
+    background-color: var(--black);
+    color: white;
+    height: 30px;
+}

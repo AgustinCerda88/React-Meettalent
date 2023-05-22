@@ -8,7 +8,7 @@ import { BiLockOpenAlt } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 
-export const Fetch = ({ abierto }) => {
+export const Fetch = ({ abierto, setCantidadOfertasLock }) => {
   const [offers, setOffers] = useState([]);
   const { searchText } = useContext(SearchContext);
   const location = useLocation();
@@ -22,14 +22,20 @@ export const Fetch = ({ abierto }) => {
           return offer;
         });
         setOffers(offersData);
+
         setPercents(
           offersData.map((offer, index) => Math.floor(Math.random() * 100))
         );
+
+        location.pathname === "/home" &&
+          setCantidadOfertasLock(
+            offersData.filter((offer) => offer.lock === true).length
+          );
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [setCantidadOfertasLock, location]);
 
   console.log(offers);
 
@@ -49,6 +55,7 @@ export const Fetch = ({ abierto }) => {
 
   const toggleAbierto = async (offerId) => {
     const updatedOffers = [...offers];
+
     const updatedOffer = updatedOffers.find((offer) => offer._id === offerId);
     updatedOffer.lock = !updatedOffer.lock;
 
@@ -56,6 +63,10 @@ export const Fetch = ({ abierto }) => {
 
     if (updateOfferData) {
       setOffers(updatedOffers);
+      location.pathname === "/home" &&
+        setCantidadOfertasLock(
+          updatedOffers.filter((offer) => offer.lock === true).length
+        );
     }
   };
 
@@ -71,11 +82,9 @@ export const Fetch = ({ abierto }) => {
                 offer.company.toLowerCase().includes(searchText) ||
                 offer.description.toLowerCase().includes(searchText) ||
                 offer.location.toLowerCase().includes(searchText) ||
-                offer.city.toLowerCase().includes(searchText)) &&
-              location.pathname === "/home" &&
-              offer.lock &&
-              offer
-          )
+                offer.city.toLowerCase().includes(searchText)) 
+                && location.pathname === "/home" &&
+              offer.lock && offer)
           .map((offer, index) => {
             const percent = percents[index];
             return (
@@ -147,19 +156,18 @@ export const Fetch = ({ abierto }) => {
           })
       )}
 
-      {offers.filter(
+      {offers
+      .filter(
         (offer) =>
           offer.position.toLowerCase().includes(searchText) ||
           offer.company.toLowerCase().includes(searchText) ||
           offer.description.toLowerCase().includes(searchText) ||
           offer.location.toLowerCase().includes(searchText) ||
           offer.city.toLowerCase().includes(searchText)
-      ) &&
-        location.pathname === "/offers" &&
-        offers
-          .filter((offer) => offer.lock === abierto && offer)
-          .map((offer, index) => {
-            const percent = percents[index];
+      ) && location.pathname === "/offers" &&
+        offers.filter((offer) => offer.lock === abierto && offer)
+          .map((offer, i) => {
+            const percent = percents[i];
             return (
               <div className="lockposition" key={offer._id}>
                 <div

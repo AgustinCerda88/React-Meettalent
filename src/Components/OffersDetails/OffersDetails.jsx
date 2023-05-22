@@ -3,19 +3,20 @@ import axios from "axios";
 import Nav from "../Nav/Nav";
 import { useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./OffersDetails.css";
 import { SearchContext } from "../../App";
-import { useNavigate } from "react-router-dom";
 
 export const OffersDetails = () => {
   const [editMode, setEditMode] = useState(false);
   const [editedOffer, setEditedOffer] = useState({});
-
   const { newOffer, setNewOffer } = useContext(SearchContext);
   const [offer, setOffer] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
+  const previousPage = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     if (newOffer && newOffer._id === id) {
@@ -65,48 +66,43 @@ export const OffersDetails = () => {
   return (
     <div className="page">
       <h3 className="backheader">
-        <Link to={"/offers"}>
+        <button onClick={previousPage}>
           <IoIosArrowBack></IoIosArrowBack>
-        </Link>
+        </button>
         Detalle de la oferta
         <div></div>
       </h3>
       <div className="container-black">
-        <div className="offers">
+        <div className="offerdetail">
           {offer ? (
             <div className="job-offer">
-              <div>
+              <div className="job-title">
                 <h3>{offer.position}</h3>
                 <h4>{offer.company}</h4>
               </div>
-
-              <div>
-                <p>
-                  <strong>Descripción:</strong>
-                </p>
+              <div className="description">
+                <strong>Descripción:</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.description}
                     onChange={(e) =>
                       setEditedOffer({
                         ...editedOffer,
                         description: e.target.value,
-                      
                       })
                     }
                   />
                 ) : (
-                  <p>{offer.description}</p>
+                  <div>{offer.description}</div>
                 )}
               </div>
-
-              <div>
-                <p>
-                  <strong>Requisitos:</strong>
-                </p>
+              <div className="description">
+                <strong>Requisitos:</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.requirements}
                     onChange={(e) =>
@@ -117,16 +113,14 @@ export const OffersDetails = () => {
                     }
                   />
                 ) : (
-                  <p>{offer.requirements}</p>
+                  <div>{offer.requirements}</div>
                 )}
               </div>
-
-              <div>
-                <p>
-                  <strong>Palabras Clave:</strong>
-                </p>
+              {/* <div className="description">
+                <strong>Palabras Clave:</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.keywords}
                     onChange={(e) =>
@@ -137,16 +131,14 @@ export const OffersDetails = () => {
                     }
                   />
                 ) : (
-                  <p>{offer.keywords}</p>
+                  <div>{offer.keywords}</div>
                 )}
-              </div>
-
-              <div>
-                <p>
-                  <strong>Salario:</strong>
-                </p>
+              </div> */}
+              <div className="description">
+                <strong>Salario:</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.salary}
                     onChange={(e) =>
@@ -157,16 +149,14 @@ export const OffersDetails = () => {
                     }
                   />
                 ) : (
-                  <p>{offer.salary}</p>
+                  <div>{offer.salary}</div>
                 )}
               </div>
-
-              <div>
-                <p>
-                  <strong>Ubicación:</strong>
-                </p>
+              <div className="description">
+                <strong>Ubicación:</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.location}
                     onChange={(e) =>
@@ -177,16 +167,14 @@ export const OffersDetails = () => {
                     }
                   />
                 ) : (
-                  <p>{offer.location}</p>
+                  <div>{offer.location}</div>
                 )}
               </div>
-
-              <div>
-                <p>
-                  <strong>Tipo de Jornada:</strong>
-                </p>
+              <div className="description">
+                <strong>Tipo de Jornada:</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.scheduleType}
                     onChange={(e) =>
@@ -197,16 +185,14 @@ export const OffersDetails = () => {
                     }
                   />
                 ) : (
-                  <p>{offer.scheduleType}</p>
+                  <div>{offer.scheduleType}</div>
                 )}
               </div>
-
-              <div>
-                <p>
-                  <strong>Tipo de Contrato:</strong>
-                </p>
+              <div className="description">
+                <strong>Tipo de Contrato:</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.contractType}
                     onChange={(e) =>
@@ -217,16 +203,15 @@ export const OffersDetails = () => {
                     }
                   />
                 ) : (
-                  <p>{offer.contractType}</p>
+                  <div>{offer.contractType}</div>
                 )}
               </div>
 
-              <div>
-                <p>
-                  <strong>Disponibilidad</strong>
-                </p>
+              <div className="description">
+                <strong>Disponibilidad</strong>
                 {editMode ? (
                   <input
+                    className="editor"
                     type="text"
                     value={editedOffer.availability}
                     onChange={(e) =>
@@ -237,48 +222,31 @@ export const OffersDetails = () => {
                     }
                   />
                 ) : (
-                  <p>{offer.availability}</p>
+                  <div>{offer.availability}</div>
                 )}
               </div>
+              <div className="buttons">
+                {!editMode && (
+                  <button
+                    className="button"
+                    onClick={() => deleteOffer(offer._id)}
+                  >
+                    Eliminar oferta
+                  </button>
+                )}
 
-              {!editMode && (
-                <button
-                  style={{
-                    height: "20px",
-                    width: "100px",
-                    backgroundColor: "red",
-                  }}
-                  onClick={() => deleteOffer(offer._id)}
-                >
-                  Eliminar oferta
-                </button>
-              )}
+                {editMode && (
+                  <button className="button" onClick={handleSave}>
+                    Guardar
+                  </button>
+                )}
 
-              {editMode && (
-                <button
-                  style={{
-                    height: "20px",
-                    width: "100px",
-                    backgroundColor: "green",
-                  }}
-                  onClick={handleSave}
-                >
-                  Guardar
-                </button>
-              )}
-
-              {!editMode && (
-                <button
-                  style={{
-                    height: "20px",
-                    width: "100px",
-                    backgroundColor: "blue",
-                  }}
-                  onClick={handleEdit}
-                >
-                  Editar
-                </button>
-              )}
+                {!editMode && (
+                  <button className="button" onClick={handleEdit}>
+                    Editar
+                  </button>
+                )}
+              </div>
             </div>
           ) : (
             <p>Cargando las ofertas...</p>
